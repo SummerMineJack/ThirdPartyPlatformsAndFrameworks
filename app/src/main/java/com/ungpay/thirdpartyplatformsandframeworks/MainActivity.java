@@ -6,7 +6,9 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.ungpay.thirdpartyplatformsandframeworks.OkGo.OkGoActivity;
 import com.ungpay.thirdpartyplatformsandframeworks.UmnegTongji.BugActivity;
+import com.ungpay.thirdpartyplatformsandframeworks.mvp.view.MVPMainActivity;
 import com.ungpay.thirdpartyplatformsandframeworks.okhttp.OkHttpActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,6 +27,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, OkHttpActivity.class));
+            }
+        });
+        findViewById(R.id.mvp).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, MVPMainActivity.class));
+            }
+        });
+        findViewById(R.id.OkGo).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, OkGoActivity.class));
             }
         });
     }

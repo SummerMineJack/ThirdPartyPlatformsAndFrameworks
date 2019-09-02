@@ -28,6 +28,11 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     // https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15on
     implementation 'org.bouncycastle:bcprov-jdk15on:1.62'
+    implementation("com.squareup.okhttp3:okhttp:4.1.0")
     //android util
     implementation 'com.blankj:utilcode:1.24.7'
+    //interface request network
+    implementation 'com.loopj.android:android-async-http:1.4.9'
+    implementation 'com.lzy.net:okgo:3.0.4'
+    implementation 'cn.finalteam:okhttpfinal:2.0.7'
 }
