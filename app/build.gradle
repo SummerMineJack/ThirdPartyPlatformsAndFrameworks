@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 29
-    buildToolsVersion "29.0.1"
+    buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.ungpay.thirdpartyplatformsandframeworks"
         minSdkVersion 21
@@ -35,4 +35,5 @@ dependencies {
     implementation 'com.loopj.android:android-async-http:1.4.9'
     implementation 'com.lzy.net:okgo:3.0.4'
     implementation 'cn.finalteam:okhttpfinal:2.0.7'
+    implementation 'com.readystatesoftware.chuck:library:1.0.4'
 }

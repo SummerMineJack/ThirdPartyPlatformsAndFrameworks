@@ -10,9 +10,10 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.lzy.okgo.OkGo;
-import com.lzy.okgo.callback.AbsCallback;
 import com.lzy.okgo.model.Response;
 import com.ungpay.thirdpartyplatformsandframeworks.R;
+
+import java.util.List;
 
 public class OkGoActivity extends AppCompatActivity implements OnClickListener {
 
@@ -38,17 +39,13 @@ public class OkGoActivity extends AppCompatActivity implements OnClickListener {
     }
 
     private void sendRequest() {
-        OkGo.<String>get("http://v.juhe.cn/joke/content/list.php?time=1418816972&key=a51a682a669992d512ee34bc9f0d64da").tag(this)
-                .execute(new AbsCallback<String>() {
+        OkGo.<ServerResponse<List<ServerModel>>>get("http://v.juhe.cn/boxoffice/rank")
+                .params("key", "e79ba85d9c205beeeb4f7e3d4c21e264")
+                .tag(this)
+                .execute(new DialogCallback<ServerResponse<List<ServerModel>>>(this) {
                     @Override
-                    public void onSuccess(Response<String> response) {
-                        Log.e("~~onSuccess", response.body() + "");
-                    }
-
-                    @Override
-                    public String convertResponse(okhttp3.Response response) {
-                        Log.e("~~convertResponse", response.code() + "");
-                        return null;
+                    public void onSuccess(Response<ServerResponse<List<ServerModel>>> response) {
+                        Log.e("~", response.body().resultcode);
                     }
                 });
     }
