@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.UiActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/alipay_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="仿支付宝首页滑动缩放" />
+        <Button
+            android:id="@+id/fonts_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="字体" />
+    </LinearLayout>
+</ScrollView>

@@ -10,6 +10,7 @@ import com.ungpay.thirdpartyplatformsandframeworks.OkGo.OkGoActivity;
 import com.ungpay.thirdpartyplatformsandframeworks.UmnegTongji.BugActivity;
 import com.ungpay.thirdpartyplatformsandframeworks.mvp.view.MVPMainActivity;
 import com.ungpay.thirdpartyplatformsandframeworks.okhttp.OkHttpActivity;
+import com.ungpay.thirdpartyplatformsandframeworks.ui.UiActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,6 +42,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, OkGoActivity.class));
             }
         });
+        findViewById(R.id.ui).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, UiActivity.class));
+            }
+        });
+
     }
 
     @Override

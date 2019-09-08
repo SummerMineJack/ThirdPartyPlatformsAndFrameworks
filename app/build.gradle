@@ -36,4 +36,7 @@ dependencies {
     implementation 'com.lzy.net:okgo:3.0.4'
     implementation 'cn.finalteam:okhttpfinal:2.0.7'
     implementation 'com.readystatesoftware.chuck:library:1.0.4'
+    //recyclerrefreshlayout
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-beta-1'
+    implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
 }
