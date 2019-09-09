@@ -39,4 +39,6 @@ dependencies {
     //recyclerrefreshlayout
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-beta-1'
     implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
+    //banner
+    implementation 'com.github.xiaohaibin:XBanner:1.6.9'
 }
