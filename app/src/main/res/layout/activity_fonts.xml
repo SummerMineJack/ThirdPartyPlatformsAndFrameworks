@@ -6,13 +6,11 @@
     tools:context=".ui.fonts.FontsActivity">
 
     <TextView
-        fontPath="fonts/Lato-Regular.ttf"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
         android:text=".ui.fonts.FontsActivityg"
         android:textColor="@android:color/black"
-        android:textSize="28sp"
-        tools:ignore="MissingPrefix" />
+        android:textSize="28sp" />
 
 </LinearLayout>
