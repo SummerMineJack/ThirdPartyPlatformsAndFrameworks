@@ -14,16 +14,19 @@ public class EditTextWathcerActivity extends AppCompatActivity {
 
     private EditText edtPhone;
     private EditText edtIdcard;
-
+    private int start, count, before;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_text_wathcer);
+
         edtPhone = findViewById(R.id.edt_phone);
         edtIdcard = findViewById(R.id.edt_idcard);
-        edtIdcard.addTextChangedListener(cardWatcher);
+
         edtPhone.addTextChangedListener(phoneWatcher);
+
+        edtIdcard.addTextChangedListener(BankWatcher);
     }
 
     TextWatcher phoneWatcher = new TextWatcher() {
@@ -33,34 +36,20 @@ public class EditTextWathcerActivity extends AppCompatActivity {
         }
 
         @Override
-        public void onTextChanged(CharSequence s, int start, int before, int count) {
-            int length = s.toString().length();
-            StringBuilder stringBuilder = new StringBuilder();
-            if (count == 0) {
+        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            EditTextWathcerActivity.this.start = i;
+            EditTextWathcerActivity.this.before = i1;
+            EditTextWathcerActivity.this.count = i2;
 
-            } else if (count == 1) {
-                for (int i = 0; i < length; i++) {
-                    if (i != 3 && i != 8 && s.charAt(i) == ' ') {
-                        continue;
-                    } else {
-                        stringBuilder.append(s.charAt(i));
-                        if ((stringBuilder.length() == 4 || stringBuilder.length() == 9)
-                                && stringBuilder.charAt(stringBuilder.length() - 1) != ' ') {
-                            stringBuilder.insert(stringBuilder.length() - 1, ' ');
-                        }
-                    }
-                }
-            }
-            edtPhone.setText(stringBuilder.toString());
-            edtPhone.setSelection(edtPhone.getText().toString().length());
         }
 
         @Override
         public void afterTextChanged(Editable editable) {
-
+            TextWatcherUtils.getInstance().MobilePhoneNumberWatcher(editable, start, before, count, 0, edtPhone, phoneWatcher);
         }
     };
-    TextWatcher cardWatcher = new TextWatcher() {
+
+    TextWatcher BankWatcher = new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -68,12 +57,15 @@ public class EditTextWathcerActivity extends AppCompatActivity {
 
         @Override
         public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
+            EditTextWathcerActivity.this.start = i;
+            EditTextWathcerActivity.this.before = i1;
+            EditTextWathcerActivity.this.count = i2;
         }
 
         @Override
         public void afterTextChanged(Editable editable) {
-
+            TextWatcherUtils.getInstance().MobilePhoneNumberWatcher(editable, start, before, count, 1, edtIdcard, BankWatcher);
         }
     };
+
 }
