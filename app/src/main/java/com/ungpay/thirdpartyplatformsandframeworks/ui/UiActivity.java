@@ -8,7 +8,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.ungpay.thirdpartyplatformsandframeworks.R;
 import com.ungpay.thirdpartyplatformsandframeworks.ui.PhoneCard.EditTextWathcerActivity;
+import com.ungpay.thirdpartyplatformsandframeworks.ui.ViewLayoutTransation.ViewActivity;
 import com.ungpay.thirdpartyplatformsandframeworks.ui.alipayui.AlipayHomeActivity;
+import com.ungpay.thirdpartyplatformsandframeworks.ui.customKeyBoard.CustomKeyboard;
 import com.ungpay.thirdpartyplatformsandframeworks.ui.fonts.FontsActivity;
 
 public class UiActivity extends AppCompatActivity {
@@ -35,5 +37,18 @@ public class UiActivity extends AppCompatActivity {
                 startActivity(new Intent(UiActivity.this, EditTextWathcerActivity.class));
             }
         });
+        findViewById(R.id.ViewShowHidden).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(UiActivity.this, ViewActivity.class));
+            }
+        });
+        findViewById(R.id.keyboard).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(UiActivity.this, CustomKeyboard.class));
+            }
+        });
+
     }
 }

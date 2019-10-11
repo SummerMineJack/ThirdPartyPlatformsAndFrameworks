@@ -4,25 +4,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.UiActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/alipay_home"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="仿支付宝首页滑动缩放" />
+
         <Button
             android:id="@+id/fonts_home"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="字体" />
+
         <Button
             android:id="@+id/editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="editText" />
+            android:text="editText"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/ViewShowHidden"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ViewShowHidden"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/keyboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="keyboard"
+            android:textAllCaps="false" />
     </LinearLayout>
 </ScrollView>

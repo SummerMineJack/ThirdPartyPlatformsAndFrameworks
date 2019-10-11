@@ -15,7 +15,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.New">
-        <activity android:name=".ui.PhoneCard.EditTextWathcerActivity"></activity>
+        <activity android:name=".ui.customKeyBoard.CustomKeyboard"></activity>
+        <activity android:name=".ui.ViewLayoutTransation.ViewActivity" />
+        <activity android:name=".ui.PhoneCard.EditTextWathcerActivity" />
         <activity android:name=".ui.fonts.FontsActivity" />
         <activity android:name=".ui.alipayui.AlipayHomeActivity" />
         <activity android:name=".ui.UiActivity" />
