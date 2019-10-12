@@ -15,7 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.New">
-        <activity android:name=".ui.customKeyBoard.CustomKeyboard"></activity>
+        <activity android:name=".ui.customKeyBoard.CustomKeyboard" />
         <activity android:name=".ui.ViewLayoutTransation.ViewActivity" />
         <activity android:name=".ui.PhoneCard.EditTextWathcerActivity" />
         <activity android:name=".ui.fonts.FontsActivity" />

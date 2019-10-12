@@ -17,4 +17,15 @@
         <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
         <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
     </style>
+    <!-- Custom Class Styles -->
+    <style name="Lato_Bold" parent="android:Widget.Holo.Light.TextView">
+        <item name="fontPath">fonts/Lato-Bold.ttf</item>
+    </style>
+    <style name="Lato_Bold_italic" parent="android:Widget.Holo.Light.TextView">
+        <item name="fontPath">fonts/Lato-BoldItalic.ttf</item>
+    </style>
+    <style name="Lato_Regular" parent="android:Widget.Holo.Light.TextView">
+        <item name="fontPath">fonts/Lato-Lato-Regular.ttf</item>
+    </style>
+
 </resources>

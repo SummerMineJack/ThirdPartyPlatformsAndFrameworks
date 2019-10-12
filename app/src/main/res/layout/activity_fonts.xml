@@ -3,14 +3,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.fonts.FontsActivity">
 
     <TextView
+        style="@style/Lato_Bold"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:text=".ui.fonts.FontsActivityg"
+        android:text="This is Test Fonts Content——Lato_Bold"
         android:textColor="@android:color/black"
-        android:textSize="28sp" />
+        android:textSize="18sp" />
+
+    <TextView
+        style="@style/Lato_Bold_italic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="This is Test Fonts Content——Lato_Bold_italic"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <TextView
+        style="@style/Lato_Regular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="This is Test Fonts Content——Lato_Regular"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
 
 </LinearLayout>
