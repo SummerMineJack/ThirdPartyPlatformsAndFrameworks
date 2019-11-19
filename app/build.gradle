@@ -41,4 +41,10 @@ dependencies {
     implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
     //banner
     implementation 'com.github.xiaohaibin:XBanner:1.6.9'
+    //audio video
+    implementation 'com.devbrackets.android:exomedia:4.3.0'
+    implementation 'com.devbrackets.android:playlistcore:2.0.1'
+    // Image Loading
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
 }

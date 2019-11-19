@@ -6,10 +6,12 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <ListView
-        android:id="@+id/list_demo"
+    <TextView
+        android:id="@+id/item_button"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:textSize="24sp"
+        android:layout_height="100dp"
+        android:gravity="center" />
 
 
 </LinearLayout>
