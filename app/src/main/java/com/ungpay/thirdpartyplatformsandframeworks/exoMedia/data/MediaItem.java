@@ -1,17 +1,15 @@
-package com.ungpay.thirdpartyplatformsandframeworks.exoMedia;
+package com.ungpay.thirdpartyplatformsandframeworks.exoMedia.data;
 
 import com.devbrackets.android.playlistcore.api.PlaylistItem;
+import com.ungpay.thirdpartyplatformsandframeworks.exoMedia.AudioEntity;
 
 import org.jetbrains.annotations.Nullable;
 
 public class MediaItem implements PlaylistItem {
-    private  AudioEntity audioEntity;
+
+    private AudioEntity audioEntity;
     private boolean isAudio;
 
-    public MediaItem(AudioEntity audioEntity, boolean isAudio) {
-        this.audioEntity = audioEntity;
-        this.isAudio = isAudio;
-    }
 
     @Nullable
     @Override
@@ -28,7 +26,7 @@ public class MediaItem implements PlaylistItem {
     @Nullable
     @Override
     public String getArtworkUrl() {
-        return this.audioEntity.getAudioImage();
+        return audioEntity.getAudioImage();
     }
 
     @Override
@@ -39,7 +37,7 @@ public class MediaItem implements PlaylistItem {
     @Nullable
     @Override
     public String getDownloadedMediaUri() {
-        return this.audioEntity.getAudioImage();
+        return null;
     }
 
     @Override
@@ -49,24 +47,24 @@ public class MediaItem implements PlaylistItem {
 
     @Override
     public int getMediaType() {
-        return 0;
+        return isAudio ? 1 : 2;
     }
 
     @Nullable
     @Override
     public String getMediaUrl() {
-        return this.audioEntity.getAudioUrl();
+        return audioEntity.getAudioUrl();
     }
 
     @Nullable
     @Override
     public String getThumbnailUrl() {
-        return this.audioEntity.getAudioImage();
+        return audioEntity.getAudioImage();
     }
 
     @Nullable
     @Override
     public String getTitle() {
-        return this.audioEntity.getAudioTitle();
+        return audioEntity.getAudioTitle();
     }
 }

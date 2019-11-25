@@ -1,6 +1,6 @@
 package com.ungpay.thirdpartyplatformsandframeworks.exoMedia;
 
-class AudioEntity {
+public  class AudioEntity {
     public AudioEntity(String audioTitle, String audioUrl, String audioImage) {
         this.audioTitle = audioTitle;
         this.audioUrl = audioUrl;
