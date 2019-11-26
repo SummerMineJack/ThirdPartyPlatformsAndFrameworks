@@ -6,24 +6,11 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <RelativeLayout
+    <ImageView
+        android:id="@+id/artworkView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/audio_player_controls_container">
-
-        <ImageView
-            android:id="@+id/artworkView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:ignore="ContentDescription" />
-
-        <ProgressBar
-            android:id="@+id/loadingBar"
-            style="?android:progressBarStyleLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true" />
-    </RelativeLayout>
+        tools:ignore="ContentDescription" />
 
     <LinearLayout
         android:id="@+id/audio_player_controls_container"
@@ -88,7 +75,7 @@
                 android:background="@android:color/transparent"
                 android:scaleType="centerInside"
                 android:visibility="invisible"
-                app:srcCompat="@drawable/playlistcore_ic_skip_previous_black"
+                app:srcCompat="@android:drawable/ic_media_previous"
                 tools:ignore="ContentDescription"
                 tools:visibility="visible" />
 
@@ -102,7 +89,7 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:scaleType="centerInside"
-                app:srcCompat="@drawable/playlistcore_ic_play_arrow_black"
+                app:srcCompat="@android:drawable/ic_media_play"
                 tools:ignore="ContentDescription" />
 
             <Space
@@ -117,7 +104,7 @@
                 android:background="@android:color/transparent"
                 android:scaleType="centerInside"
                 android:visibility="invisible"
-                app:srcCompat="@drawable/playlistcore_ic_skip_next_black"
+                app:srcCompat="@android:drawable/ic_media_next"
                 tools:ignore="ContentDescription"
                 tools:visibility="visible" />
 
