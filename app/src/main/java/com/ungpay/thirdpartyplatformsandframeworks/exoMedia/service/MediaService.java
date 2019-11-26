@@ -14,11 +14,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 
 public class MediaService extends BasePlaylistService {
-    private PlaylistManager playlistManager;
-
-    public MediaService() {
-        playlistManager = MyApplication.getInstance().getPlaylistManager();
-    }
+    private PlaylistManager playlistManager = MyApplication.getInstance().getPlaylistManager();
 
     @Override
     public void onCreate() {
@@ -39,7 +35,7 @@ public class MediaService extends BasePlaylistService {
     @NotNull
     @Override
     protected BasePlaylistManager getPlaylistManager() {
-        return getPlaylistManager();
+        return playlistManager;
     }
 
     @NotNull

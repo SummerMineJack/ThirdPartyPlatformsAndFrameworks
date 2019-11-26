@@ -58,7 +58,7 @@ public class MediaItem implements PlaylistItem {
 
     @Nullable
     @Override
-    public String getThumbnailUrl() {
+    public String getThumbnailUrl()    {
         return audioEntity.getAudioImage();
     }
 

@@ -15,7 +15,7 @@ public class AudioApi extends BaseMediaApi {
     private AudioPlayer audioPlayer;
 
     public AudioApi(Context context) {
-        this.audioPlayer = new AudioPlayer(context.getApplicationContext());
+        this.audioPlayer = new AudioPlayer(context);
         this.audioPlayer.setOnErrorListener(this);
         this.audioPlayer.setOnPreparedListener(this);
         this.audioPlayer.setOnCompletionListener(this);
