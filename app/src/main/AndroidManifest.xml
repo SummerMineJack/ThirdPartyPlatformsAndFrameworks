@@ -16,16 +16,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.New">
-        <service
-            android:name=".exoMedia.service.MediaService"
-            android:enabled="true"
-            android:exported="true"></service>
-        <service
-            android:name=".exoMedia.Service.MediaService"
-            android:enabled="true"
-            android:exported="true" />
 
-        <activity android:name=".exoMedia.ExoMediaAudioPlayDetailActivity" />
+        <activity
+            android:name=".exoMedia.ExoMediaAudioPlayDetailActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
         <activity android:name=".exoMedia.ExoMediaVideoPlayActivity" />
         <activity android:name=".exoMedia.ExoMediaAudioPlayActivity" />
         <activity android:name=".exoMedia.ExoMediaChooseActivity" />
