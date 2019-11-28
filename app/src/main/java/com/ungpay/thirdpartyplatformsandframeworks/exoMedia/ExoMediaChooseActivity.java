@@ -8,7 +8,7 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.ungpay.thirdpartyplatformsandframeworks.DemoListAdapter;
+import com.ungpay.thirdpartyplatformsandframeworks.adapter.DemoListAdapter;
 import com.ungpay.thirdpartyplatformsandframeworks.R;
 
 import java.util.ArrayList;

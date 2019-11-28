@@ -2,18 +2,15 @@ package com.ungpay.thirdpartyplatformsandframeworks;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.BaseAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.ungpay.thirdpartyplatformsandframeworks.OkGo.OkGoActivity;
 import com.ungpay.thirdpartyplatformsandframeworks.UmnegTongji.BugActivity;
+import com.ungpay.thirdpartyplatformsandframeworks.adapter.DemoListAdapter;
 import com.ungpay.thirdpartyplatformsandframeworks.exoMedia.ExoMediaChooseActivity;
 import com.ungpay.thirdpartyplatformsandframeworks.mvp.view.MVPMainActivity;
 import com.ungpay.thirdpartyplatformsandframeworks.okhttp.OkHttpActivity;
