@@ -16,10 +16,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.New">
+        <activity android:name=".ui.SimpleExoPlayerTimeBar"></activity>
         <activity
             android:name=".exoMedia.ExoMediaVideoPlayDetailActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".exoMedia.ExoMediaAudioPlayDetailActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
