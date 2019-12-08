@@ -3,6 +3,7 @@ package com.ungpay.thirdpartyplatformsandframeworks.exoMedia;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.SeekBar;
@@ -36,7 +37,7 @@ public class ExoMediaAudioPlayDetailActivity extends AppCompatActivity implement
     private ImageView exo_audio_image;
     private TextView exo_start_time;
     private TextView exo_end_time;
-    private SeekBar exo_seek_bar;
+//    private SeekBar exo_seek_bar;
 
     //
     private SimpleExoPlayer simpleExoPlayer;
@@ -80,7 +81,9 @@ public class ExoMediaAudioPlayDetailActivity extends AppCompatActivity implement
     private void initHandler() {
         handler = new Handler();
         runnable = () -> {
-            exo_seek_bar.setProgress((int) ((simpleExoPlayer.getCurrentPosition() * 100) / simpleExoPlayer.getDuration()));
+            long a = (simpleExoPlayer.getCurrentPosition() * 100) / simpleExoPlayer.getDuration();
+            exo_seek_bar.setProgress((int) a);
+            Log.e("~~setProgress", "setProgress:" + exo_seek_bar.getProgress() + " a:" + a);
             long progress = simpleExoPlayer.getCurrentPosition();
             String progressString = String.format(Locale.getDefault(), "%02d:%02d",
                     TimeUnit.MILLISECONDS.toMinutes(progress) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(progress)),
