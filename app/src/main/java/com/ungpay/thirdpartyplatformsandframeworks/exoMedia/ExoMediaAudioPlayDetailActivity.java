@@ -37,7 +37,7 @@ public class ExoMediaAudioPlayDetailActivity extends AppCompatActivity implement
     private ImageView exo_audio_image;
     private TextView exo_start_time;
     private TextView exo_end_time;
-//    private SeekBar exo_seek_bar;
+    private SeekBar exo_seek_bar;
 
     //
     private SimpleExoPlayer simpleExoPlayer;
