@@ -12,7 +12,6 @@ import com.ungpay.thirdpartyplatformsandframeworks.R;
 import com.ungpay.thirdpartyplatformsandframeworks.adapter.MediaAdapter;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 
 public class ExoMediaAudioPlayActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
