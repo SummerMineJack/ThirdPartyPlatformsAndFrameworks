@@ -15,6 +15,7 @@ import com.ungpay.thirdpartyplatformsandframeworks.ui.ViewLayoutTransation.ViewA
 import com.ungpay.thirdpartyplatformsandframeworks.ui.alipayui.AlipayHomeActivity;
 import com.ungpay.thirdpartyplatformsandframeworks.ui.customKeyBoard.CustomKeyboard;
 import com.ungpay.thirdpartyplatformsandframeworks.ui.fonts.FontsActivity;
+import com.ungpay.thirdpartyplatformsandframeworks.ui.listview.ListViewGroups;
 
 import java.util.ArrayList;
 
@@ -42,6 +43,7 @@ public class UiActivity extends AppCompatActivity implements AdapterView.OnItemC
         datas.add("ViewShowHidden");
         datas.add("keyboard");
         datas.add("SimpleExoPlayerTimeBar");
+        datas.add("ListView Groups");
     }
 
     @Override
@@ -64,6 +66,9 @@ public class UiActivity extends AppCompatActivity implements AdapterView.OnItemC
                 break;
             case 5:
                 startActivity(new Intent(UiActivity.this, SimpleExoPlayerTimeBar.class));
+                break;
+            case 6:
+                startActivity(new Intent(UiActivity.this, ListViewGroups.class));
                 break;
         }
     }
