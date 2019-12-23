@@ -5,12 +5,15 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ExpandableListView;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
 import com.ungpay.thirdpartyplatformsandframeworks.R;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
 
 
 public class ListViewGroups extends Activity {
@@ -36,64 +39,170 @@ public class ListViewGroups extends Activity {
      * 解悉 JSON 字串
      */
     private void getJSONObject() {
-
-        ArrayList<Child> children=new ArrayList<>();
-        for (int i = 0; i <4; i++) {
-            Group group = new Group();
-            group.setId(i+"");
-            group.setTitle("问题标题"+i);
-            for (int j = 0; j < 4; j++) {
-                Child child = new Child();
-                child.setUserid(j+"");
-                child.setFullname("用户名"+j);
-                child.setUsername("完整的用户名"+j);
-                children.add(child);
-                group.setChildren(children);
-            }
-            groups.add(group);
-        }
-        String jsonStr = "{\"CommunityUsersResult\":[\n" +
-                "{\"CommunityUsersList\":[\n" +
-                "{\"fullname\":\"a111\",\"userid\":11,\"username\":\"a1\"},{\"fullname\":\"b222\",\"userid\":12,\"username\":\"b2\"},\n" +
-                "{\"fullname\":\"a111\",\"userid\":11,\"username\":\"a1\"},{\"fullname\":\"b222\",\"userid\":12,\"username\":\"b2\"}\n" +
-                "],\"id\":1,\"title\":\"人事部\"},\n" +
-                "{\"CommunityUsersList\":[\n" +
-                "{\"fullname\":\"a111\",\"userid\":11,\"username\":\"a1\"},{\"fullname\":\"b222\",\"userid\":12,\"username\":\"b2\"},\n" +
-                "{\"fullname\":\"a111\",\"userid\":11,\"username\":\"a1\"},{\"fullname\":\"b222\",\"userid\":12,\"username\":\"b2\"}\n" +
-                "],\"id\":1,\"title\":\"人事部\"},\n" +
-                "{\"CommunityUsersList\":[\n" +
-                "{\"fullname\":\"a111\",\"userid\":11,\"username\":\"a1\"},{\"fullname\":\"b222\",\"userid\":12,\"username\":\"b2\"},\n" +
-                "{\"fullname\":\"a111\",\"userid\":11,\"username\":\"a1\"},{\"fullname\":\"b222\",\"userid\":12,\"username\":\"b2\"}\n" +
-                "],\"id\":1,\"title\":\"人事部\"},\n" +
-                "{\"CommunityUsersList\":[\n" +
-                "{\"fullname\":\"c333\",\"userid\":13,\"username\":\"c3\"},{\"fullname\":\"d444\",\"userid\":14,\"username\":\"d4\"},{\"fullname\":\"d444\",\"userid\":14," +
-                "\"username\":\"d4\"},{\"fullname\":\"d444\",\"userid\":14,\"username\":\"d4\"}\n" +
-                "],\"id\":2,\"title\":\"開發部\"}]}";
-
-        /*try {
+        String jsonStr = "{\n" +
+                "    \"bookquestionList\": [\n" +
+                "        {\n" +
+                "            \"bookQuestionTitle\": \"测试问题标题1\",\n" +
+                "            \"isSingleChoice\": false,\n" +
+                "            \"answerList\": [\n" +
+                "                \"选项A\",\n" +
+                "                \"选项B\",\n" +
+                "                \"选项C\",\n" +
+                "                \"选项D\"\n" +
+                "            ],\n" +
+                "            \"bookid\": 1\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"bookQuestionTitle\": \"测试问题标题1\",\n" +
+                "            \"isSingleChoice\": false,\n" +
+                "            \"answerList\": [\n" +
+                "                \"选项A\",\n" +
+                "                \"选项B\",\n" +
+                "                \"选项C\",\n" +
+                "                \"选项D\"\n" +
+                "            ],\n" +
+                "            \"bookid\": 2\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"bookQuestionTitle\": \"测试问题标题1\",\n" +
+                "            \"isSingleChoice\": false,\n" +
+                "            \"answerList\": [\n" +
+                "                \"选项A\",\n" +
+                "                \"选项B\",\n" +
+                "                \"选项C\",\n" +
+                "                \"选项D\"\n" +
+                "            ],\n" +
+                "            \"bookid\": 3\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"bookQuestionTitle\": \"测试问题标题1\",\n" +
+                "            \"isSingleChoice\": false,\n" +
+                "            \"answerList\": [\n" +
+                "                \"选项A\",\n" +
+                "                \"选项B\",\n" +
+                "                \"选项C\",\n" +
+                "                \"选项D\"\n" +
+                "            ],\n" +
+                "            \"bookid\": 4\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"bookQuestionTitle\": \"测试问题标题1\",\n" +
+                "            \"isSingleChoice\": false,\n" +
+                "            \"answerList\": [\n" +
+                "                \"选项A\",\n" +
+                "                \"选项B\",\n" +
+                "                \"选项C\",\n" +
+                "                \"选项D\"\n" +
+                "            ],\n" +
+                "            \"bookid\": 5\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"bookQuestionTitle\": \"测试问题标题1\",\n" +
+                "            \"isSingleChoice\": false,\n" +
+                "            \"answerList\": [\n" +
+                "                \"选项A\",\n" +
+                "                \"选项B\",\n" +
+                "                \"选项C\",\n" +
+                "                \"选项D\"\n" +
+                "            ],\n" +
+                "            \"bookid\": 6\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"bookQuestionTitle\": \"测试问题标题1\",\n" +
+                "            \"isSingleChoice\": false,\n" +
+                "            \"answerList\": [\n" +
+                "                \"选项A\",\n" +
+                "                \"选项B\",\n" +
+                "                \"选项C\",\n" +
+                "                \"选项D\"\n" +
+                "            ],\n" +
+                "            \"bookid\": 7\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"bookQuestionTitle\": \"测试问题标题1\",\n" +
+                "            \"isSingleChoice\": false,\n" +
+                "            \"answerList\": [\n" +
+                "                \"选项A\",\n" +
+                "                \"选项B\",\n" +
+                "                \"选项C\",\n" +
+                "                \"选项D\"\n" +
+                "            ],\n" +
+                "            \"bookid\": 8\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"bookQuestionTitle\": \"测试问题标题1\",\n" +
+                "            \"isSingleChoice\": false,\n" +
+                "            \"answerList\": [\n" +
+                "                \"选项A\",\n" +
+                "                \"选项B\",\n" +
+                "                \"选项C\",\n" +
+                "                \"选项D\"\n" +
+                "            ],\n" +
+                "            \"bookid\": 9\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"bookQuestionTitle\": \"测试问题标题1\",\n" +
+                "            \"isSingleChoice\": false,\n" +
+                "            \"answerList\": [\n" +
+                "                \"选项A\",\n" +
+                "                \"选项B\",\n" +
+                "                \"选项C\",\n" +
+                "                \"选项D\"\n" +
+                "            ],\n" +
+                "            \"bookid\": 10\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"bookQuestionTitle\": \"测试问题标题1\",\n" +
+                "            \"isSingleChoice\": false,\n" +
+                "            \"answerList\": [\n" +
+                "                \"选项A\",\n" +
+                "                \"选项B\",\n" +
+                "                \"选项C\",\n" +
+                "                \"选项D\"\n" +
+                "            ],\n" +
+                "            \"bookid\": 11\n" +
+                "        }\n" +
+                "    ]\n" +
+                "}";
+        try {
             JSONObject CommunityUsersResultObj = new JSONObject(jsonStr);
-            JSONArray groupList = CommunityUsersResultObj.getJSONArray("CommunityUsersResult");
+            JSONArray groupList = CommunityUsersResultObj.getJSONArray("bookquestionList");
 
             for (int i = 0; i < groupList.length(); i++) {
                 JSONObject groupObj = (JSONObject) groupList.get(i);
                 Group group = new Group();
-                group.setId(groupObj.optString("id"));
-                group.setTitle(groupObj.optString("title"));
-                JSONArray childrenList = groupObj.getJSONArray("CommunityUsersList");
+                group.setId(groupObj.optString("bookid"));
+                group.setTitle(groupObj.optString("bookQuestionTitle"));
+                JSONArray childrenList = groupObj.getJSONArray("answerList");
 
                 for (int j = 0; j < childrenList.length(); j++) {
-                    JSONObject childObj = (JSONObject) childrenList.get(j);
                     Child child = new Child();
-                    child.setUserid(childObj.optString("userid"));
-                    child.setFullname(childObj.optString("fullname"));
-                    child.setUsername(childObj.optString("username"));
+                    child.setUserid("1");
+                    child.setFullname(childrenList.optString(j));
+                    child.setUsername("2");
                     group.addChildrenItem(child);
                 }
 
                 groups.add(group);
             }
         } catch (JSONException e) {
-            Log.d("allenj", e.toString());
-        }*/
+            Log.d("~~~~~~~allenj", e.toString());
+        }
+
+    }
+
+
+    /**
+     * Gson解析对象
+     */
+    public LinkedHashMap<String, String> json2HashMap(JSONObject jsonObject) throws JSONException {
+        LinkedHashMap<String, String> hashMap = new LinkedHashMap<>();
+        Iterator<String> it = jsonObject.keys();
+        while (it.hasNext()) {
+            String key = it.next();
+            String value = jsonObject.getString(key);
+            hashMap.put(key, value);
+        }
+        return hashMap;
     }
 }
