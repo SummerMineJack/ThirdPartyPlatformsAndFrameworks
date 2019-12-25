@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.ungpay.thirdpartyplatformsandframeworks.OkGo.OkGoActivity;
 import com.ungpay.thirdpartyplatformsandframeworks.UmnegTongji.BugActivity;
 import com.ungpay.thirdpartyplatformsandframeworks.adapter.DemoListAdapter;
+import com.ungpay.thirdpartyplatformsandframeworks.eventsbus.EventsBusMainActivity;
 import com.ungpay.thirdpartyplatformsandframeworks.exoMedia.ExoMediaChooseActivity;
 import com.ungpay.thirdpartyplatformsandframeworks.mvp.view.MVPMainActivity;
 import com.ungpay.thirdpartyplatformsandframeworks.okhttp.OkHttpActivity;
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         demoList = findViewById(R.id.list_demo);
         demoList.setOnItemClickListener(this);
         initData();
-        demoList.setAdapter(new DemoListAdapter(datas,MainActivity.this));
+        demoList.setAdapter(new DemoListAdapter(datas, MainActivity.this));
     }
 
     private void initData() {
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         datas.add("MVP");
         datas.add("ui");
         datas.add("ExoMedia");
+        datas.add("EventBus");
     }
 
     @Override
@@ -65,9 +67,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             case 5:
                 startActivity(new Intent(MainActivity.this, ExoMediaChooseActivity.class));
                 break;
+            case 6:
+                startActivity(new Intent(MainActivity.this, EventsBusMainActivity.class));
+                break;
         }
     }
-
 
 
 }

@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-
+apply plugin: "com.blankj.bus"
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
@@ -34,7 +34,7 @@ dependencies {
     implementation 'org.bouncycastle:bcprov-jdk15on:1.62'
     implementation("com.squareup.okhttp3:okhttp:4.1.0")
     //android util
-    implementation 'com.blankj:utilcode:1.24.7'
+    implementation 'com.blankj:utilcode:1.26.0'
     //interface request network
     implementation 'com.loopj.android:android-async-http:1.4.9'
     implementation 'com.lzy.net:okgo:3.0.4'
@@ -45,11 +45,8 @@ dependencies {
     implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
     //banner
     implementation 'com.github.xiaohaibin:XBanner:1.6.9'
-
-
     implementation 'com.github.bumptech.glide:glide:4.10.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
-
     implementation 'com.shuyu:GSYVideoPlayer:7.1.1'
     implementation 'com.google.android.exoplayer:exoplayer:2.10.8'
 }
