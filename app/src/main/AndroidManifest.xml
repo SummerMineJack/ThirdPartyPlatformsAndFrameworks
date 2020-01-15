@@ -16,7 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.New">
-        <activity android:name=".eventsbus.EventBusSecondActivity"></activity>
+        <activity android:name=".ui.DropDownMenu.DropDownMenuActivity"></activity>
+        <activity android:name=".eventsbus.EventBusSecondActivity" />
         <activity android:name=".eventsbus.EventsBusMainActivity" />
         <activity android:name=".ui.listview.ListViewGroups" />
         <activity android:name=".ui.SimpleExoPlayerTimeBar" />

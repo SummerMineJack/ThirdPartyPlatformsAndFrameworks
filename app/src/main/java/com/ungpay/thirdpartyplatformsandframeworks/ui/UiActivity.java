@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.ungpay.thirdpartyplatformsandframeworks.R;
 import com.ungpay.thirdpartyplatformsandframeworks.adapter.DemoListAdapter;
+import com.ungpay.thirdpartyplatformsandframeworks.ui.DropDownMenu.DropDownMenuActivity;
 import com.ungpay.thirdpartyplatformsandframeworks.ui.PhoneCard.EditTextWathcerActivity;
 import com.ungpay.thirdpartyplatformsandframeworks.ui.ViewLayoutTransation.ViewActivity;
 import com.ungpay.thirdpartyplatformsandframeworks.ui.alipayui.AlipayHomeActivity;
@@ -44,6 +45,7 @@ public class UiActivity extends AppCompatActivity implements AdapterView.OnItemC
         datas.add("keyboard");
         datas.add("SimpleExoPlayerTimeBar");
         datas.add("ListView Groups");
+        datas.add("DropDownMenu");
     }
 
     @Override
@@ -69,6 +71,9 @@ public class UiActivity extends AppCompatActivity implements AdapterView.OnItemC
                 break;
             case 6:
                 startActivity(new Intent(UiActivity.this, ListViewGroups.class));
+                break;
+            case 7:
+                startActivity(new Intent(UiActivity.this, DropDownMenuActivity.class));
                 break;
         }
     }
