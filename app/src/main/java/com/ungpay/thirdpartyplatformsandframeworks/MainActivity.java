@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.ungpay.thirdpartyplatformsandframeworks.OkGo.OkGoActivity;
 import com.ungpay.thirdpartyplatformsandframeworks.UmnegTongji.BugActivity;
 import com.ungpay.thirdpartyplatformsandframeworks.adapter.DemoListAdapter;
+import com.ungpay.thirdpartyplatformsandframeworks.bluetooth.BlueToothActivity;
 import com.ungpay.thirdpartyplatformsandframeworks.eventsbus.EventsBusMainActivity;
 import com.ungpay.thirdpartyplatformsandframeworks.exoMedia.ExoMediaChooseActivity;
 import com.ungpay.thirdpartyplatformsandframeworks.mvp.view.MVPMainActivity;
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         datas.add("ui");
         datas.add("ExoMedia");
         datas.add("EventBus");
+        datas.add("BlueTooth");
     }
 
     @Override
@@ -69,6 +71,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 break;
             case 6:
                 startActivity(new Intent(MainActivity.this, EventsBusMainActivity.class));
+                break;
+            case 7:
+                startActivity(new Intent(MainActivity.this, BlueToothActivity.class));
                 break;
         }
     }
