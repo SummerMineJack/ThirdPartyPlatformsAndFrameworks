@@ -13,6 +13,7 @@ import com.ungpay.thirdpartyplatformsandframeworks.adapter.DemoListAdapter;
 import com.ungpay.thirdpartyplatformsandframeworks.ui.DropDownMenu.DropDownMenuActivity;
 import com.ungpay.thirdpartyplatformsandframeworks.ui.PhoneCard.EditTextWathcerActivity;
 import com.ungpay.thirdpartyplatformsandframeworks.ui.ViewLayoutTransation.ViewActivity;
+import com.ungpay.thirdpartyplatformsandframeworks.ui.alipaycardview.AlipayCardViewActivity;
 import com.ungpay.thirdpartyplatformsandframeworks.ui.alipayui.AlipayHomeActivity;
 import com.ungpay.thirdpartyplatformsandframeworks.ui.customKeyBoard.CustomKeyboard;
 import com.ungpay.thirdpartyplatformsandframeworks.ui.fonts.FontsActivity;
@@ -46,6 +47,7 @@ public class UiActivity extends AppCompatActivity implements AdapterView.OnItemC
         datas.add("SimpleExoPlayerTimeBar");
         datas.add("ListView Groups");
         datas.add("DropDownMenu");
+        datas.add("Alipay Card View");
     }
 
     @Override
@@ -74,6 +76,9 @@ public class UiActivity extends AppCompatActivity implements AdapterView.OnItemC
                 break;
             case 7:
                 startActivity(new Intent(UiActivity.this, DropDownMenuActivity.class));
+                break;
+            case 8:
+                startActivity(new Intent(UiActivity.this, AlipayCardViewActivity.class));
                 break;
         }
     }

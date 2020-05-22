@@ -408,4 +408,8 @@
     <string name="tab_me_help_feedback_choose_type">Topic</string>
     <string name="tab_me_help_feedback_word_count">%1s/500</string>
     <string name="tab_me_help_chat_online">Onlinechat</string>
+
+    <string name="menu_action_all_down">All down</string>
+    <string name="menu_action_up_down">Up down</string>
+    <string name="menu_action_up_down_stack">Up down stack</string>
 </resources>
